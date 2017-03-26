@@ -1,0 +1,5 @@
+﻿TflStatusIntent is there a good service on the tube 
+TflStatusIntent is there a good service on the underground 
+TflStatusIntent are there any disruptions on the tube
+TflStatusIntent what's the tube status
+ExchangeCuIntent are there new cumulative updates for exchange
