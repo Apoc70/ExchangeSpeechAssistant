@@ -98,6 +98,7 @@ namespace Azure4Alexa.Alexa
 
             return await Task.FromResult<SpeechletResponse>(GetOnLaunchAsyncResult(session));
         }
+
         public override async Task<SpeechletResponse> OnIntentAsync(IntentRequest intentRequest, Session session)
         //        public override Task<SpeechletResponse> OnIntentAsync(IntentRequest intentRequest, Session session)
         {
@@ -134,65 +135,19 @@ namespace Azure4Alexa.Alexa
             switch (intentName)
             {
 
-                // call the Transport for London (TFL) API and get status
-
-                case ("TflStatusIntent"):
-                    return await Tfl.Status.GetResults(session, httpClient);
-
                 case ("ExchangeCuIntent"):
                     return await Exchange.Status.GetResults(session, httpClient);
 
-                //return Task.FromResult<SpeechletResponse>(Tfl.Status.GetResults(session, httpClient));
+                case ("ExchangeCeoStatus"):
+                    return await Exchange.Status.GetCeoResults(session, httpClient);
 
-                // Advanced: call the Outlook API and read the number of unread emails and subject and sender of the first five
-                // you will need to register for a Client ID with Microsoft and configure your skill for Oauth
-                // uncomment the code below when you're ready
+                // Open implementations (https://github.com/Apoc70/ExchangeSpeechAssistant/issues/1)
 
-                // See README.md in the Outlook folder
+                //case ("ExchangeStatusIntent"):
+                //    return await Exchange.Status.GetGeneralStatusResults(session, httpClient);
 
-                //case ("OutlookUnreadIntent"):
-                //    return await Outlook.Mail.GetUnreadEmailCount(session, httpClient);
-                //return Task.FromResult<SpeechletResponse>(Outlook.Mail.GetUnreadEmailCount(session, httpClient));
-
-                // If you're feeling lucky - this intent reads your Outlook calendar
-                // You need to first successfully configure the email skill that's above
-
-                // Add these scopes to the Alexa Config Portal
-                // https://outlook.office.com/calendars.read
-                // https://outlook.office.com/mailboxsettings.readwrite
-                // 
-                // if you were an early adopter of Azure4Alexa, you'll need to update the IntentSchema and Sample Utterances
-                // in the Alexa Config Portal.  Copy and Paste again the contents of Outlook/Registration/AlexaIntentSchema.json and
-                // Outlook/Registration/AlexaSampleUtterances.txt into the Alexa Config Portal under "Interaction Model" for your
-                // skill
-
-                // nezt uncomment the case statement below
-
-                // then unlink/link your skill and sign in again
-
-                //case ("OutlookCalendarIntent"):
-                //    return await Outlook.Calendar.GetOutlookEventCount(session, httpClient);
-
-                // If you're feeling really lucky:
-                // call the Microsoft Groove Music API using pre-created intents provided by Alexa
-
-                //case ("AMAZON.ChooseAction<object@MusicCreativeWork>"):
-                //    return await Groove.Music.PlayGrooveMusic(session, httpClient, intentRequest);
-
-                // pre-created intents provided by Alexa don't work (well) with playlists, so we 
-                // created this one below to handle things
-
-                //case ("PlaylistPlay"):
-                //    return await Groove.Music.PlayGroovePlaylist(session, httpClient, intentRequest);
-
-                // add your own intent handler
-
-                // case ("YourCustomIntent"):
-                //   return await YourCustomIntentClass(session, whateverYouNeedToPass);
-                //   invalid pattern with change // return Task.FromResult<SpeechletResponse>(YourCustomIntentClass(session, whateverYouNeedToPass));
-
-                // did you forget to implement an intent?
-                // just send the user to the intent-less utterance
+                //case ("ExchangeCorruptIndexIntent"):
+                //    return await Exchange.Status.GetCorruptIndexResults(session, httpClient);
 
                 default:
                     return await Task.FromResult<SpeechletResponse>(GetOnLaunchAsyncResult(session));
@@ -230,7 +185,8 @@ namespace Azure4Alexa.Alexa
             Context context)
         {
             var httpClient = new HttpClient();
-            return await Groove.Music.EnqueueGrooveMusic(context, httpClient, "ENQUEUE");
+            //return await Groove.Music.EnqueueGrooveMusic(context, httpClient, "ENQUEUE");
+            return null;
         }
 
         // handle the user asking for the next track in an album or playlist 
@@ -242,7 +198,7 @@ namespace Azure4Alexa.Alexa
             var httpClient = new HttpClient();
             if (audioIntentRequest.Intent.Name == "AMAZON.NextIntent")
             {
-                return await Groove.Music.EnqueueGrooveMusic(context, httpClient, "AMAZON.NextIntent");
+                // return await Groove.Music.EnqueueGrooveMusic(context, httpClient, "AMAZON.NextIntent");
             }
             return null;
 

@@ -102,7 +102,6 @@
     <Content Include="Images\groove.png" />
     <Content Include="Images\msft.png" />
     <Content Include="Images\outlook.png" />
-    <Content Include="outlook.htm" />
     <Content Include="default.htm" />
     <Content Include="Global.asax" />
     <Content Include="privacy.htm" />
@@ -121,18 +120,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tfl\Status.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Alexa\Registration\AlexaIntentSchema.json" />
-    <Content Include="Tfl\StatusExample1.json" />
-    <Content Include="Tfl\StatusExample2.json" />
-    <Content Include="Tfl\StatusExample3.json" />
     <Content Include="Exchange\Registration\AlexaIntentSchema.json" />
-    <None Include="Properties\PublishProfiles\ExchangeSpeechAssistant - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\ExchangeSpeechAssistant - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\ExchangeSpeechAssistant - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\ExchangeSpeechAssistant - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
