@@ -8,18 +8,18 @@ The solution and all it's requirements is described here: https://www.granikos.e
 
 ## Currently supported utterances
 
-ExchangeCuIntent are there new cumulative updates for exchange
-ExchangeCuIntent are there new cumulative updates available
-ExchangeCorruptIndexIntent are the corrupt database indexes
-ExchangeCorruptIndexIntent is a database index corrupt
-ExchangeCorruptIndexIntent is the database index corrupt
+* ExchangeCuIntent are there new cumulative updates for exchange
+* ExchangeCuIntent are there new cumulative updates available
+* ExchangeCorruptIndexIntent are the corrupt database indexes
+* ExchangeCorruptIndexIntent is a database index corrupt
+* ExchangeCorruptIndexIntent is the database index corrupt
 
 ## To-Dos
 
-ExchangeStatusIntent what's the status of Exchange
-ExchangeStatusIntent is Exchange in good shape
-ExchangeCeoStatus is the CEO's mailbox in good shape
-ExchangeCeoStatus how's the CEO's mailbox doing
+* ExchangeStatusIntent what's the status of Exchange
+* ExchangeStatusIntent is Exchange in good shape
+* ExchangeCeoStatus is the CEO's mailbox in good shape
+* ExchangeCeoStatus how's the CEO's mailbox doing
 
 Looking forward to your creative contributions
 
