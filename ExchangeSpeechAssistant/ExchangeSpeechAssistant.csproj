@@ -125,8 +125,6 @@
     <Content Include="packages.config" />
     <None Include="Alexa\Registration\AlexaIntentSchema.json" />
     <Content Include="Exchange\Registration\AlexaIntentSchema.json" />
-    <None Include="Properties\PublishProfiles\ExchangeSpeechAssistant - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\ExchangeSpeechAssistant - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -137,6 +135,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AlexaSkillsKit.Lib\AlexaSkillsKit.Lib.csproj">
